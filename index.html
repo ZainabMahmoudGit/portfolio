@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zainab Mahmoud | Senior Backend & Full-Stack Engineer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-dark: #0a0f1d;
+            --bg-card: rgba(17, 24, 39, 0.7);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --primary-cyan: #06b6d4;
+            --primary-emerald: #10b981;
+            --primary-violet: #8b5cf6;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --gradient-text: linear-gradient(135deg, #38bdf8 0%, #34d399 50%, #a78bfa 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* AMBIENT BACKGROUND GLOW */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background: 
+                radial-gradient(circle at 15% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 60%, rgba(139, 92, 246, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 90%, rgba(16, 185, 129, 0.06) 0%, transparent 40%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            backdrop-filter: blur(16px);
+            background: rgba(10, 15, 29, 0.85);
+            border-bottom: 1px solid var(--border-card);
+            z-index: 100;
+            padding: 16px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo-badge {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-emerald));
+            color: #000;
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 13px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-cyan);
+        }
+
+        .cta-btn-sm {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-emerald));
+            color: #041014;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .cta-btn-sm:hover {
+            transform: scale(1.03);
+            opacity: 0.95;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 90px;
+            text-align: center;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #34d399;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #10b981;
+            box-shadow: 0 0 10px #10b981;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.7; }
+        }
+
+        h1.hero-title {
+            font-size: 52px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .gradient-span {
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.hero-desc {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto 35px auto;
+            line-height: 1.6;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-emerald));
+            color: #051419;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(6, 182, 212, 0.35);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-card);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            backdrop-filter: blur(8px);
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* METRICS BAR */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .metric-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            padding: 24px 16px;
+            border-radius: 16px;
+            backdrop-filter: blur(12px);
+            text-align: center;
+        }
+
+        .metric-val {
+            font-size: 36px;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--gradient-text);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+
+        .metric-label {
+            font-size: 13px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* SECTION COMMON */
+        section {
+            padding: 90px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            color: var(--primary-cyan);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+
+        /* PROJECTS FILTER TABS */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-card);
+            color: var(--text-muted);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 13.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary-cyan), var(--primary-emerald));
+            color: #041419;
+            border-color: transparent;
+            font-weight: 700;
+        }
+
+        /* PROJECTS GRID */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 26px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 28px;
+            backdrop-filter: blur(14px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-cyan), var(--primary-emerald));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .category-tag {
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--primary-cyan);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+        }
+
+        .store-badges {
+            display: flex;
+            gap: 8px;
+        }
+
+        .badge-link {
+            color: var(--text-muted);
+            transition: color 0.2s;
+        }
+
+        .badge-link:hover {
+            color: #fff;
+        }
+
+        .project-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .arabic-title {
+            font-family: 'Cairo', sans-serif;
+            color: #38bdf8;
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .project-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tech-pill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+
+        .tech-pill {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #cbd5e1;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .card-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-link {
+            color: var(--primary-cyan);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s;
+        }
+
+        .footer-link:hover {
+            gap: 10px;
+            color: #38bdf8;
+        }
+
+        /* SKILLS SECTION */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 18px;
+            padding: 28px;
+            backdrop-filter: blur(12px);
+        }
+
+        .skill-box-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .skill-icon-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--primary-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-box-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .skill-item {
+            font-size: 14px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-check {
+            color: var(--primary-emerald);
+            font-weight: bold;
+        }
+
+        /* TIMELINE (EXPERIENCE & EDUCATION) */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+
+        .timeline-col-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 28px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline-wrapper {
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            padding-left: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .timeline-card {
+            position: relative;
+        }
+
+        .timeline-card::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 4px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-cyan);
+            box-shadow: 0 0 10px var(--primary-cyan);
+        }
+
+        .timeline-role {
+            font-size: 17px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .timeline-org {
+            color: var(--primary-emerald);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .timeline-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 10px;
+        }
+
+        .timeline-desc {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* CONTACT SECTION */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(16, 185, 129, 0.05));
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: 28px;
+            padding: 50px 40px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            backdrop-filter: blur(16px);
+        }
+
+        .contact-channels {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .channel-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--border-card);
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .channel-btn:hover {
+            background: #fff;
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            border-top: 1px solid var(--border-card);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            h1.hero-title { font-size: 38px; }
+            .metrics-grid { grid-template-columns: 1fr 1fr; }
+            .timeline-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <span class="logo-badge">ZM</span>
+                Zainab Mahmoud
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Systems Portfolio</a></li>
+                <li><a href="#skills">Tech Stack</a></li>
+                <li><a href="#experience">Experience & ITI</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="Zainab_Mahmoud_CV.html" target="_blank" class="cta-btn-sm">
+                📄 Open ATS CV
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero container" id="about">
+        <div class="status-pill">
+            <span class="status-dot"></span>
+            Available for Senior Backend & Full-Stack Opportunities
+        </div>
+        <h1 class="hero-title">
+            Architecting Scalable <span class="gradient-span">Cloud ERPs, Multi-Tenant SaaS</span> & High-Concurrency Systems
+        </h1>
+        <p class="hero-desc">
+            Hi, I’m <strong>Zainab Mahmoud</strong>, a Backend & Full-Stack Software Engineer with 2+ years of production experience building mission-critical engines with <strong>Laravel, MySQL & Clean Architecture</strong>. Graduated with Very Good from Computer Science & Artificial Intelligence, and completed the elite <strong>ITI Full-Stack Web Development Track</strong>.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#projects" class="btn-primary">
+                <i data-lucide="layers"></i> Explore Production Systems (11)
+            </a>
+            <a href="Zainab_Mahmoud_CV.html" target="_blank" class="btn-secondary">
+                <i data-lucide="file-text"></i> Download ATS Resume
+            </a>
+            <a href="https://wa.me/201278097321" target="_blank" class="btn-secondary" style="border-color: rgba(16, 185, 129, 0.4); color: #34d399;">
+                <i data-lucide="message-circle"></i> Chat on WhatsApp
+            </a>
+        </div>
+
+        <!-- METRICS BAR -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-val">11+</div>
+                <div class="metric-label">Production Platforms Deployed</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-val">2+</div>
+                <div class="metric-label">Years Production Experience</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-val">5.0 ★</div>
+                <div class="metric-label">Live on App Store & Google Play</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-val">100%</div>
+                <div class="metric-label">ACID Financial & Tax Compliance</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="container">
+        <div class="section-header">
+            <span class="section-badge">Proven Engineering Track Record</span>
+            <h2 class="section-title">Production Systems & Architecture</h2>
+            <p class="section-desc">
+                From double-entry accounting ERPs to live auction bidding engines and on-demand mobile backends powering the Saudi & GCC markets.
+            </p>
+        </div>
+
+        <!-- FILTER TABS -->
+        <div class="filter-tabs">
+            <button class="filter-btn active" onclick="filterProjects('all')">All Systems (11)</button>
+            <button class="filter-btn" onclick="filterProjects('erp')">FinTech & ERPs</button>
+            <button class="filter-btn" onclick="filterProjects('marketplace')">On-Demand & Mobile APIs</button>
+            <button class="filter-btn" onclick="filterProjects('saas')">SaaS & CRMs</button>
+            <button class="filter-btn" onclick="filterProjects('ecommerce')">E-Commerce</button>
+        </div>
+
+        <!-- PROJECTS GRID -->
+        <div class="projects-grid" id="projectsGrid">
+
+            <!-- 1. Decoria ERP -->
+            <div class="project-card" data-category="erp">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">Enterprise ERP</span>
+                        <i data-lucide="calculator" style="color: var(--primary-cyan);"></i>
+                    </div>
+                    <h3 class="project-title">Decoria Cloud ERP & Accounting</h3>
+                    <div class="arabic-title">نظام ديكوريا - المحاسبة والقيود العامة وإدارة الفروع</div>
+                    <p class="project-desc">
+                        Comprehensive cloud ERP featuring balanced double-entry General Ledger (GL), manual journal vouchers, 12-month fiscal closing, and ZATCA-compliant 15% VAT tax declaration reporting.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">MySQL ACID</span>
+                        <span class="tech-pill">Double-Entry</span>
+                        <span class="tech-pill">15% VAT</span>
+                        <span class="tech-pill">Al Rajhi Integration</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #10b981; font-weight: 700;">✓ In Production</span>
+                    <a href="Zainab_Mahmoud_CV.html" class="footer-link">View Architecture <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- 2. My Fanni -->
+            <div class="project-card" data-category="marketplace">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">On-Demand Services</span>
+                        <div class="store-badges">
+                            <a href="https://apps.apple.com/us/app/%D9%85%D8%A7%D9%8A-%D9%81%D9%86%D9%8A/id6746807479" target="_blank" class="badge-link" title="App Store"><i data-lucide="apple"></i></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.elmrouj.my_fanny" target="_blank" class="badge-link" title="Google Play"><i data-lucide="play"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">My Fanni (ماي فني)</h3>
+                    <div class="arabic-title">منصة خدمات الصيانة المنزلية والـ Operations CRM</div>
+                    <p class="project-desc">
+                        Core backend engine and operations CRM powering an on-demand home maintenance marketplace live on App Store and Google Play with real-time technician tracking, quotations, and FCM alerts.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel REST API</span>
+                        <span class="tech-pill">Flutter Client</span>
+                        <span class="tech-pill">FCM Webhooks</span>
+                        <span class="tech-pill">Google Maps</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #38bdf8; font-weight: 700;">5.0 ★ Live on Stores</span>
+                    <a href="https://apps.apple.com/us/app/%D9%85%D8%A7%D9%8A-%D9%81%D9%86%D9%8A/id6746807479" target="_blank" class="footer-link">App Store <i data-lucide="external-link"></i></a>
+                </div>
+            </div>
+
+            <!-- 3. VAYAN Platform -->
+            <div class="project-card" data-category="erp marketplace">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">B2B FinTech Marketplace</span>
+                        <i data-lucide="shield-check" style="color: var(--primary-emerald);"></i>
+                    </div>
+                    <h3 class="project-title">VAYAN Platform (فيان)</h3>
+                    <div class="arabic-title">سوق الخدمات المؤسسية، محفظة إسكرو، و 7 لغات</div>
+                    <p class="project-desc">
+                        Enterprise services marketplace with corporate fleet accounts, multi-tier fee splitting (10 SAR platform fee + 15% provider commission), 24h batch settlements, and 7-language localization.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">Redis Escrow</span>
+                        <span class="tech-pill">7 Languages</span>
+                        <span class="tech-pill">Fleet B2B</span>
+                        <span class="tech-pill">Warranty Engine</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <a href="vayan_visual_diagrams.html" target="_blank" style="font-size: 12px; color: #34d399; font-weight: 700;">📊 View Interactive Flow</a>
+                    <a href="vayan_visual_diagrams.html" target="_blank" class="footer-link">FinTech Diagram <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- 4. Drivo / Al-Joudy -->
+            <div class="project-card" data-category="erp marketplace">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">Fleet Logistics ERP</span>
+                        <div class="store-badges">
+                            <a href="https://apps.apple.com/us/app/%D8%A7%D9%84%D8%AC%D9%88%D8%AF%D9%8A/id6749195744" target="_blank" class="badge-link"><i data-lucide="apple"></i></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.elmrouj.drivo" target="_blank" class="badge-link"><i data-lucide="play"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Drivo / Al-Joudy (الجودي)</h3>
+                    <div class="arabic-title">نظام إدارة أسطول النقل والرحلات والدفعات المقسطة</div>
+                    <p class="project-desc">
+                        End-to-end transportation ERP linking a Flutter Driver App, React.js Operations Dispatch Portal, and a Laravel backend with partial down-payments, installment schedules, and refund wallets.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">React.js Dashboard</span>
+                        <span class="tech-pill">Flutter Driver App</span>
+                        <span class="tech-pill">Installments Engine</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #38bdf8; font-weight: 700;">Live on Stores</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.elmrouj.drivo" target="_blank" class="footer-link">Google Play <i data-lucide="external-link"></i></a>
+                </div>
+            </div>
+
+            <!-- 5. Soumax -->
+            <div class="project-card" data-category="erp">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">Real-Time Auctions</span>
+                        <a href="https://play.google.com/store/apps/details?id=com.elmroug.soumax.soumax_app" target="_blank" class="badge-link"><i data-lucide="play"></i></a>
+                    </div>
+                    <h3 class="project-title">Soumax (سو ماكس)</h3>
+                    <div class="arabic-title">منصة مزادات ومزايدات حية فورية ومحافظ إلكترونية</div>
+                    <p class="project-desc">
+                        High-concurrency live bidding engine engineered with atomic database locks to eliminate race conditions during closing seconds, alongside automated escrow security deposit holds.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">MySQL Locks</span>
+                        <span class="tech-pill">Race-Condition Prevention</span>
+                        <span class="tech-pill">Digital Wallet</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #10b981; font-weight: 700;">Live on Google Play</span>
+                    <a href="https://play.google.com/store/apps/details?id=com.elmroug.soumax.soumax_app" target="_blank" class="footer-link">View App <i data-lucide="external-link"></i></a>
+                </div>
+            </div>
+
+            <!-- 6. LegalTech SaaS -->
+            <div class="project-card" data-category="saas">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">LegalTech SaaS</span>
+                        <i data-lucide="scale" style="color: var(--primary-violet);"></i>
+                    </div>
+                    <h3 class="project-title">LegalTech Law Practice SaaS</h3>
+                    <div class="arabic-title">نظام ساس لإدارة مكاتب المحاماة والقضايا والجلسات</div>
+                    <p class="project-desc">
+                        Multi-tenant SaaS engineered with 3 dedicated role-based portals (Office Management, Attorney Workspace, and Client Self-Service) with judicial hearing calendars and document vaults.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel SaaS</span>
+                        <span class="tech-pill">Multi-Tenancy</span>
+                        <span class="tech-pill">Court Schedulers</span>
+                        <span class="tech-pill">Document Vault</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #a78bfa; font-weight: 700;">3-Tier Portal Architecture</span>
+                    <a href="Zainab_Mahmoud_CV.html" class="footer-link">Details <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- 7. Byte Home -->
+            <div class="project-card" data-category="saas">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">PropTech SaaS</span>
+                        <i data-lucide="home" style="color: var(--primary-cyan);"></i>
+                    </div>
+                    <h3 class="project-title">Byte Home (بايت هوم)</h3>
+                    <div class="arabic-title">إدارة العقارات والاشتراكات وأتمتة بلاغات الواتساب</div>
+                    <p class="project-desc">
+                        Property technology SaaS with metered pay-per-unit subscription billing. Automatically dispatches maintenance and cleaning tickets directly to field staff's WhatsApp via webhooks.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">WhatsApp Business API</span>
+                        <span class="tech-pill">Metered Billing</span>
+                        <span class="tech-pill">Reactive Badges</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #34d399; font-weight: 700;">WhatsApp Automation</span>
+                    <a href="Zainab_Mahmoud_CV.html" class="footer-link">Details <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- 8. Mashhor Clinic CRM -->
+            <div class="project-card" data-category="saas">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">HealthTech CRM</span>
+                        <i data-lucide="activity" style="color: #ec4899;"></i>
+                    </div>
+                    <h3 class="project-title">Mashhor Eye Experts CRM</h3>
+                    <div class="arabic-title">نظام إدارة المرضى وقمع العمليات لمراكز د. مشهور للعيون</div>
+                    <p class="project-desc">
+                        Specialized clinical consultation CRM for a renowned Saudi ophthalmology center. Features procedure pipelines (LASIK, Cataract), conversion funnels, and time-horizon queues (Today/Tomorrow).
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">HealthTech Funnels</span>
+                        <span class="tech-pill">Time-Horizon Schedulers</span>
+                        <span class="tech-pill">RBAC</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #ec4899; font-weight: 700;">1,800+ Active Patients</span>
+                    <a href="Zainab_Mahmoud_CV.html" class="footer-link">Details <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- 9. Mahsood -->
+            <div class="project-card" data-category="ecommerce marketplace">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">Q-Commerce Grocery</span>
+                        <div class="store-badges">
+                            <a href="https://apps.apple.com/us/app/%D9%85%D8%AD%D8%B5%D9%88%D8%AF/id6797227904" target="_blank" class="badge-link"><i data-lucide="apple"></i></a>
+                            <a href="https://play.google.com/store/apps/details?id=com.eljudy.asouak" target="_blank" class="badge-link"><i data-lucide="play"></i></a>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Mahsood (محصود)</h3>
+                    <div class="arabic-title">تطبيق تسوق الأغذية الطازجة والسوبرماركت وسرعة التوصيل</div>
+                    <p class="project-desc">
+                        E-grocery platform live on App Store and Google Play with dynamic inventory reservations, multi-level category navigation, fast checkout pipelines, and delivery driver tracking.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel REST API</span>
+                        <span class="tech-pill">Flutter Client</span>
+                        <span class="tech-pill">Stock Reservation</span>
+                        <span class="tech-pill">Fast Checkout</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #38bdf8; font-weight: 700;">Live on Stores</span>
+                    <a href="https://apps.apple.com/us/app/%D9%85%D8%AD%D8%B5%D9%88%D8%AF/id6797227904" target="_blank" class="footer-link">App Store <i data-lucide="external-link"></i></a>
+                </div>
+            </div>
+
+            <!-- 10. Al-Louloah Rose -->
+            <div class="project-card" data-category="ecommerce">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">Floral & Gifting E-Commerce</span>
+                        <i data-lucide="gift" style="color: #f43f5e;"></i>
+                    </div>
+                    <h3 class="project-title">Al-Louloah Rose (اللؤلؤة روز)</h3>
+                    <div class="arabic-title">متجر الزهور الفاخر وتخصيص الباقات ولوجستيات الإهداء</div>
+                    <p class="project-desc">
+                        Interactive e-commerce platform with a "Build Your Own Bouquet" customizer calculating dynamic stem prices and deducting component stock, paired with secret recipient gifting workflows.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">Component Inventory</span>
+                        <span class="tech-pill">Gifting Logistics</span>
+                        <span class="tech-pill">Time-Slots</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #f43f5e; font-weight: 700;">Custom Bouquet Builder</span>
+                    <a href="Zainab_Mahmoud_CV.html" class="footer-link">Details <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- 11. Elmrouj CRM -->
+            <div class="project-card" data-category="saas">
+                <div>
+                    <div class="project-top">
+                        <span class="category-tag">Sales Pipeline CRM</span>
+                        <i data-lucide="trending-up" style="color: var(--primary-emerald);"></i>
+                    </div>
+                    <h3 class="project-title">Elmrouj B2B Sales CRM</h3>
+                    <div class="arabic-title">نظام إدارة الفرص البيعية وفلاتر المتابعة وتحويل الفواتير</div>
+                    <p class="project-desc">
+                        B2B sales velocity CRM with query-scoped ownership (Global Leads vs. Assigned Rep Portfolio), temporal outreach filters (Tomorrow / Next Week), and 1-click quote-to-invoice automation.
+                    </p>
+                    <div class="tech-pill-list">
+                        <span class="tech-pill">Laravel</span>
+                        <span class="tech-pill">Query Scopes</span>
+                        <span class="tech-pill">Opportunity Funnel</span>
+                        <span class="tech-pill">Automated Invoicing</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span style="font-size: 12px; color: #34d399; font-weight: 700;">Quote-to-Invoice Engine</span>
+                    <a href="Zainab_Mahmoud_CV.html" class="footer-link">Details <i data-lucide="arrow-right"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" style="background: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--border-card); border-bottom: 1px solid var(--border-card);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Core Competencies</span>
+                <h2 class="section-title">Technical Mastery & Stack</h2>
+                <p class="section-desc">
+                    Engineered to deliver rock-solid backend infrastructure, rapid mobile client consumption, and elegant database schemas.
+                </p>
+            </div>
+
+            <div class="skills-container">
+                <!-- Skill Box 1 -->
+                <div class="skill-box">
+                    <div class="skill-box-header">
+                        <div class="skill-icon-wrap"><i data-lucide="server"></i></div>
+                        <div class="skill-box-title">Backend Architecture</div>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item"><span class="skill-check">✓</span> PHP & Laravel (v8, v9, v10, v11)</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> RESTful API Design & OpenAPI Specs</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Repository-Service Clean Architecture</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> OOP & SOLID Design Principles</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Dependency Injection & Service Providers</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Box 2 -->
+                <div class="skill-box">
+                    <div class="skill-box-header">
+                        <div class="skill-icon-wrap"><i data-lucide="database"></i></div>
+                        <div class="skill-box-title">Databases & Performance</div>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item"><span class="skill-check">✓</span> MySQL & PostgreSQL Schema Design</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> ACID Transactions & Rollback Safety</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Race Condition Prevention (Pessimistic Locks)</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Redis Caching & Queue Workers</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Query Optimization & Composite Indexing</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Box 3 -->
+                <div class="skill-box">
+                    <div class="skill-box-header">
+                        <div class="skill-icon-wrap"><i data-lucide="cpu"></i></div>
+                        <div class="skill-box-title">System Engineering</div>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item"><span class="skill-check">✓</span> Multi-Tenant SaaS (Tenant Isolation)</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Double-Entry Accounting & 15% VAT</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> FinTech Escrows & Wallet Settlements</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Real-Time Bidding & High-Concurrency</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Automated PDF & Excel Data Streaming</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Box 4 -->
+                <div class="skill-box">
+                    <div class="skill-box-header">
+                        <div class="skill-icon-wrap"><i data-lucide="layers"></i></div>
+                        <div class="skill-box-title">Client & Integrations</div>
+                    </div>
+                    <ul class="skills-list">
+                        <li class="skill-item"><span class="skill-check">✓</span> Angular 17 & TypeScript</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> React.js & Modern Blade Portals</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> WhatsApp Business API Webhooks</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Firebase Cloud Messaging (FCM)</li>
+                        <li class="skill-item"><span class="skill-check">✓</span> Google Maps & Geolocation API</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE & ITI SECTION -->
+    <section id="experience" class="container">
+        <div class="section-header">
+            <span class="section-badge">Career & Academic Credentials</span>
+            <h2 class="section-title">Experience & Education</h2>
+            <p class="section-desc">
+                Proven commercial software engineering delivery backed by elite institutional training.
+            </p>
+        </div>
+
+        <div class="timeline-grid">
+            <!-- Experience Col -->
+            <div>
+                <h3 class="timeline-col-title"><i data-lucide="briefcase" style="color: var(--primary-cyan);"></i> Work Experience</h3>
+                <div class="timeline-wrapper">
+                    <div class="timeline-card">
+                        <div class="timeline-role">Backend & Software Engineer</div>
+                        <div class="timeline-org">ELJUDY & ELMROOJ Information Technology L.L.C</div>
+                        <div class="timeline-date">2024 – Present (2 Years Production Work)</div>
+                        <p class="timeline-desc">
+                            Spearheaded the backend design, RESTful APIs, and administrative CRM/ERP dashboards for 11+ deployed platforms. Built double-entry accounting ledgers, multi-tenant SaaS engines, atomic bidding systems, and mobile APIs powering live App Store and Google Play applications.
+                        </p>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div class="timeline-role">Full-Stack Web Development Fellow</div>
+                        <div class="timeline-org">Information Technology Institute (ITI)</div>
+                        <div class="timeline-date">11/2023 – 03/2024 | Beni Suef, Egypt</div>
+                        <p class="timeline-desc">
+                            Completed an intensive 5-month professional diploma in Full-Stack Web Development using PHP, Laravel, MySQL, JavaScript, and Modern Web Standards, emphasizing clean MVC architecture and scalable relational databases.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Col -->
+            <div>
+                <h3 class="timeline-col-title"><i data-lucide="graduation-cap" style="color: var(--primary-emerald);"></i> Academic Degree</h3>
+                <div class="timeline-wrapper">
+                    <div class="timeline-card">
+                        <div class="timeline-role">Bachelor of Science in Computers and Artificial Intelligence</div>
+                        <div class="timeline-org">Beni Suef University (FCAI)</div>
+                        <div class="timeline-date">2019 – 2023 | Grade: Very Good (جيد جداً)</div>
+                        <p class="timeline-desc">
+                            <strong>Graduation Project:</strong> "Convert Text To Sign Language" — <strong>Grade: Excellent (امتياز)</strong>.<br>
+                            Engineered an intelligent system bridging accessibility barriers by converting text into animated 3D sign language gestures.
+                        </p>
+                    </div>
+
+                    <div class="timeline-card">
+                        <div class="timeline-role">Certifications & Specialized Tracks</div>
+                        <div class="timeline-org">ITI & Global E-Learning</div>
+                        <div class="timeline-date">2023 – 2024</div>
+                        <p class="timeline-desc">
+                            • .NET Web Development Track – ITI<br>
+                            • Introduction to JavaScript – SoloLearn<br>
+                            • Database Foundations & Concurrency Engineering
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="container">
+        <div class="contact-card">
+            <span class="section-badge">Let's Connect</span>
+            <h2 class="section-title">Ready to Build High-Impact Systems Together?</h2>
+            <p class="section-desc" style="color: #cbd5e1;">
+                Currently open for Senior Backend / Full-Stack opportunities (Full-time, Remote, or Contract) across Saudi Arabia, the GCC, and Egypt.
+            </p>
+
+            <div class="contact-channels">
+                <a href="mailto:mahmoudzainab040@gmail.com" class="channel-btn">
+                    <i data-lucide="mail"></i> mahmoudzainab040@gmail.com
+                </a>
+                <a href="https://wa.me/201278097321" target="_blank" class="channel-btn" style="border-color: rgba(16, 185, 129, 0.4); color: #34d399;">
+                    <i data-lucide="message-circle"></i> WhatsApp (+201278097321)
+                </a>
+                <a href="https://www.linkedin.com/in/zainab-mahmoud-in/" target="_blank" class="channel-btn">
+                    <i data-lucide="linkedin"></i> LinkedIn Profile
+                </a>
+                <a href="https://github.com/ZainabMahmoudGit" target="_blank" class="channel-btn">
+                    <i data-lucide="github"></i> GitHub Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Zainab Mahmoud. All rights reserved. Designed & Engineered with Modern Standards.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT FOR FILTERING & ICONS -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Project Filter Function
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                const cardCategories = card.getAttribute('data-category');
+                if (category === 'all' || cardCategories.includes(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
