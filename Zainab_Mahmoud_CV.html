@@ -269,14 +269,15 @@
             body {
                 background: white;
                 padding: 0;
-                font-size: 11.5px;
+                font-size: 11px;
+                line-height: 1.45;
                 color: #000;
             }
 
             .cv-container {
                 box-shadow: none;
                 border: none;
-                padding: 0;
+                padding: 10px 20px;
                 max-width: 100%;
             }
 
@@ -293,6 +294,15 @@
                 border: none;
                 background: none;
                 padding: 0;
+            }
+
+            section {
+                margin-bottom: 14px;
+            }
+
+            .project-block, .item-header, ul.bullet-list {
+                page-break-inside: avoid;
+                break-inside: avoid;
             }
         }
     </style>
