@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zainab Mahmoud - Senior Backend & Full-Stack Engineer CV</title>
+    <title>Zainab Mahmoud - Backend Software Engineer (PHP & Laravel) CV</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #0f172a;
-            --accent: #0284c7;
-            --accent-dark: #0369a1;
+            --accent: #dc2626; /* Laravel red/crimson accent */
+            --accent-dark: #b91c1c;
+            --accent-blue: #0284c7;
             --text: #1e293b;
             --text-muted: #475569;
             --border: #e2e8f0;
-            --bg-badge: #f1f5f9;
+            --bg-badge: #fef2f2;
         }
 
         * {
@@ -81,7 +82,7 @@
         }
 
         a {
-            color: var(--accent-dark);
+            color: var(--accent-blue);
             text-decoration: none;
             font-weight: 500;
         }
@@ -131,7 +132,7 @@
         .skill-label {
             font-weight: 700;
             color: var(--primary);
-            min-width: 170px;
+            min-width: 175px;
             font-size: 12.5px;
         }
 
@@ -156,7 +157,7 @@
 
         .item-company {
             font-weight: 600;
-            color: var(--accent-dark);
+            color: var(--accent);
         }
 
         .item-date {
@@ -228,9 +229,11 @@
             display: inline-block;
             margin-left: 6px;
             background: var(--bg-badge);
+            color: var(--accent);
             padding: 2px 7px;
             border-radius: 4px;
-            border: 1px solid var(--border);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            font-weight: 600;
         }
 
         .project-tech {
@@ -252,7 +255,7 @@
             border-radius: 50px;
             font-weight: 700;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -317,7 +320,7 @@
         <!-- HEADER -->
         <header>
             <h1 class="name">Zainab Mahmoud</h1>
-            <div class="title">Senior Backend & Full-Stack Engineer | Laravel & System Architecture</div>
+            <div class="title">Backend Software Engineer | PHP & Laravel Specialist</div>
             <div class="contact-info">
                 <span class="contact-item">📍 Beni Suef / Cairo, Egypt</span>
                 <span class="contact-item">📧 <a href="mailto:mahmoudzainab040@gmail.com">mahmoudzainab040@gmail.com</a></span>
@@ -331,7 +334,7 @@
         <section>
             <h2 class="section-title">Professional Summary</h2>
             <p class="summary-text">
-                Results-driven <strong>Backend & Full-Stack Software Engineer</strong> with 2+ years of production experience architecting and deploying enterprise-grade <strong>Cloud ERPs, Multi-Tenant SaaS systems, FinTech Escrow engines, and High-Concurrency Real-Time Marketplaces</strong>. Graduated with <strong>Very Good</strong> from the <strong>Faculty of Computers and Artificial Intelligence (Beni Suef University)</strong> with an <strong>Excellent</strong> rating in the graduation project, and completed the prestigious <strong>Information Technology Institute (ITI)</strong> Full-Stack Web Development track. Proven expertise in building scalable RESTful APIs consumed by cross-platform Flutter/React mobile applications live on the <strong>Apple App Store</strong> and <strong>Google Play</strong>, with deep proficiency in clean architecture, double-entry accounting, and third-party integrations (WhatsApp Business API, Payment Gateways, and FCM).
+                Results-driven <strong>Backend Software Engineer</strong> specializing in the <strong>PHP & Laravel ecosystem</strong> with 2+ years of production experience architecting, building, and scaling enterprise <strong>Cloud ERPs, Multi-Tenant SaaS backends, FinTech Escrow engines, and High-Throughput RESTful APIs</strong>. Graduated with <strong>Very Good</strong> from the <strong>Faculty of Computers and Artificial Intelligence (Beni Suef University)</strong> with an <strong>Excellent</strong> rating in the graduation project, and completed the prestigious <strong>Information Technology Institute (ITI)</strong> Full-Stack PHP/Laravel track. Proven expertise in advanced Eloquent ORM tuning, eliminating N+1 query bottlenecks, building ACID-compliant double-entry accounting ledgers, and orchestrating asynchronous background queue workers. Experienced in powering Flutter/React mobile apps live on the <strong>Apple App Store</strong> and <strong>Google Play</strong>, with automated integrations for WhatsApp Business API, payment gateways, and FCM.
             </p>
         </section>
 
@@ -340,24 +343,24 @@
             <h2 class="section-title">Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-group">
-                    <span class="skill-label">Backend Technologies:</span>
-                    <span class="skill-items">PHP, Laravel (v8 - v11), PHP OOP, RESTful API Architecture, Clean Architecture, Repository-Service Pattern, Node.js Basics, WordPress.</span>
+                    <span class="skill-label">PHP & Laravel Ecosystem:</span>
+                    <span class="skill-items">PHP 8.x, Laravel (v8 - v11), Eloquent ORM, Laravel Queues & Jobs, Laravel Sanctum/Passport, Service-Repository Pattern, Dependency Injection, Middleware, Form Requests, API Resources, Composer.</span>
                 </div>
                 <div class="skill-group">
-                    <span class="skill-label">Databases & Caching:</span>
-                    <span class="skill-items">MySQL, PostgreSQL, SQL Server, Database Indexing, ACID Transactions, Query Optimization, Redis.</span>
+                    <span class="skill-label">Databases & Optimization:</span>
+                    <span class="skill-items">MySQL, PostgreSQL, Database Indexing, ACID Transactions (<code>DB::transaction</code>), Query Builder Optimization, Preventing N+1 Queries, Redis Caching.</span>
                 </div>
                 <div class="skill-group">
-                    <span class="skill-label">System Architecture:</span>
-                    <span class="skill-items">Multi-Tenancy (SaaS), Double-Entry Accounting, FinTech Escrow, Race-Condition Prevention (DB Locks), Background Queue Workers.</span>
+                    <span class="skill-label">Architecture & Core Patterns:</span>
+                    <span class="skill-items">Multi-Tenancy (SaaS Isolation), Double-Entry Accounting Ledgers, FinTech & Escrow Engines, Concurrency & Race-Condition Prevention (DB Locks), Clean Architecture, SOLID Principles, OOP.</span>
                 </div>
                 <div class="skill-group">
-                    <span class="skill-label">Frontend & Design:</span>
-                    <span class="skill-items">Angular (17), TypeScript, JavaScript (ES6+), React.js Basics, HTML5, CSS3, Bootstrap, jQuery, UI/UX (Figma).</span>
+                    <span class="skill-label">API Architecture & Security:</span>
+                    <span class="skill-items">RESTful API Design & Versioning, JWT Authentication, Role-Based Access Control (RBAC Policies & Gates), API Rate Limiting, Data Encryption & Sanitization, CORS, Postman.</span>
                 </div>
                 <div class="skill-group">
-                    <span class="skill-label">Third-Party & Tools:</span>
-                    <span class="skill-items">WhatsApp Business API, Firebase Cloud Messaging (FCM), Google Maps Platform, Payment Gateways, Git/GitHub, Postman.</span>
+                    <span class="skill-label">Integrations & Tools:</span>
+                    <span class="skill-items">WhatsApp Business API Webhooks, Firebase Cloud Messaging (FCM), Payment Gateways (Mada, Visa, Apple Pay), Git, GitHub, Docker Basics, Linux Shell.</span>
                 </div>
             </div>
         </section>
@@ -367,38 +370,39 @@
             <h2 class="section-title">Professional Experience</h2>
             <div class="item-header">
                 <div>
-                    <span class="item-title">Backend & Software Engineer</span> — 
+                    <span class="item-title">Backend Software Engineer (PHP & Laravel)</span> — 
                     <span class="item-company">ELJUDY & ELMROOJ Information Technology L.L.C</span>
                 </div>
                 <span class="item-date">2024 – Present (2 Years)</span>
             </div>
             <div class="item-subtitle">Egypt / Saudi Arabia (Remote)</div>
             <ul class="bullet-list">
-                <li>Architected and deployed the core backend infrastructure and administrative CRM/ERP dashboards for <strong>11+ production platforms</strong> across the Saudi and GCC markets.</li>
-                <li>Designed and maintained high-throughput RESTful APIs powering mobile applications published on the <strong>Apple App Store</strong> and <strong>Google Play</strong>.</li>
+                <li>Architected and engineered the backend infrastructure and administrative CRM/ERP database engines for <strong>11+ production platforms</strong> across the Saudi and GCC markets using <strong>Laravel & MySQL</strong>.</li>
+                <li>Designed and maintained high-throughput RESTful API endpoints powering mobile applications published and actively rated on <strong>Apple App Store</strong> and <strong>Google Play</strong>.</li>
                 <li>Built enterprise accounting modules including double-entry general ledgers, 15% VAT calculation (ZATCA compliance), fiscal year closings, and automated digital wallet settlements.</li>
-                <li>Engineered atomic transaction locks in live auction and bidding systems to eliminate race conditions during high-concurrency bidding spikes.</li>
-                <li>Automated customer service and facility incident dispatching by integrating WhatsApp Business API webhooks, reducing manual operations by over 60%.</li>
-                <li>Designed granular Role-Based Access Control (RBAC) and tenant isolation policies ensuring zero data leakage in multi-tenant SaaS environments.</li>
+                <li>Engineered atomic transaction locks in live auction and bidding systems to eliminate race conditions during high-concurrency bidding spikes in the closing seconds of events.</li>
+                <li>Automated customer service and facility incident dispatching by implementing webhooks integrated with the <strong>WhatsApp Business API</strong>, slashing manual operations by over 60%.</li>
+                <li>Designed granular Role-Based Access Control (RBAC via Laravel Gates & Policies) and tenant data isolation policies ensuring zero data leakage in multi-tenant SaaS environments.</li>
+                <li>Optimized slow SQL queries, refactored data access layers with eager loading, and introduced Redis caching, reducing average API response times by up to 40%.</li>
             </ul>
 
             <div style="margin-top: 14px;" class="item-header">
                 <div>
-                    <span class="item-title">Full-Stack Web Development Fellow / Intern</span> — 
+                    <span class="item-title">Full-Stack / PHP Laravel Fellow</span> — 
                     <span class="item-company">Information Technology Institute (ITI)</span>
                 </div>
                 <span class="item-date">11/2023 – 03/2024</span>
             </div>
             <div class="item-subtitle">Beni Suef Branch, Egypt</div>
             <ul class="bullet-list">
-                <li>Completed an intensive 5-month hands-on professional diploma in Full-Stack Web Development using PHP, Laravel, MySQL, JavaScript, and Modern Web Standards.</li>
-                <li>Built end-to-end web applications following clean architecture, MVC patterns, secure authentication, and relational database normalization.</li>
+                <li>Completed an intensive 5-month hands-on professional diploma in Full-Stack Web Development specializing in PHP, Laravel, MySQL, JavaScript, and Modern Web Standards.</li>
+                <li>Built end-to-end web applications following clean MVC architecture, token-based authentication, and relational database normalization.</li>
             </ul>
         </section>
 
-        <!-- FEATURED ENTERPRISE PROJECTS -->
+        <!-- FEATURED ENTERPRISE LARAVEL PROJECTS -->
         <section>
-            <h2 class="section-title">Featured Enterprise Projects & Production Systems</h2>
+            <h2 class="section-title">Featured Enterprise Laravel Projects</h2>
 
             <!-- Project 1 -->
             <div class="project-block">
@@ -406,118 +410,105 @@
                     <span class="project-name">1. Decoria System (نظام ديكوريا) – Cloud ERP & Double-Entry Accounting</span>
                 </div>
                 <ul class="bullet-list">
-                    <li>Developed an all-in-one cloud ERP integrating General Ledger (GL), manual/automated journal entries with strict debit/credit balancing, 12-month fiscal closing, and multi-bank treasury management (e.g., Al Rajhi Bank).</li>
-                    <li>Engineered automated 15% VAT calculations, tax declaration filings, and multi-branch document expiration monitors.</li>
+                    <li>Built an all-in-one cloud ERP backend in Laravel integrating a balanced General Ledger (GL), manual/automated journal entries with strict debit/credit enforcement, and 12-month fiscal closing algorithms.</li>
+                    <li>Implemented automated 15% VAT calculations, tax declaration filings, and multi-branch document expiration monitors.</li>
                 </ul>
-                <div class="project-tech">Tech: Laravel, MySQL (ACID Transactions), Multi-Branch Schema, PDF/Excel Reporting Pipelines.</div>
+                <div class="project-tech">Tech Stack: Laravel, MySQL (ACID Transactions & DB Locks), Composite Indexing, Automated PDF/Excel Data Streaming.</div>
             </div>
 
             <!-- Project 2 -->
             <div class="project-block">
                 <div class="project-header">
-                    <span class="project-name">2. My Fanni (ماي فني) – On-Demand Home Services & Operations CRM</span>
+                    <span class="project-name">2. My Fanni (ماي فني) – On-Demand Services API & Operations Backend</span>
                     <span class="project-links">
                         <a href="https://apps.apple.com/us/app/%D9%85%D8%A7%D9%8A-%D9%81%D9%86%D9%8A/id6746807479" target="_blank">App Store</a>
                         <a href="https://play.google.com/store/apps/details?id=com.elmrouj.my_fanny" target="_blank">Google Play</a>
                     </span>
                 </div>
                 <ul class="bullet-list">
-                    <li>Built the complete backend and operations CRM powering an on-demand home maintenance marketplace live on App Store and Google Play.</li>
-                    <li>Implemented dynamic technician dispatching, order state machines, in-app quotations, and FCM push notifications.</li>
+                    <li>Developed the complete RESTful backend and operations CRM powering an on-demand home maintenance marketplace live on App Store and Google Play.</li>
+                    <li>Built technician geolocation dispatching, order lifecycle state machines, quotation approval workflows, and real-time FCM push notification triggers.</li>
                 </ul>
-                <div class="project-tech">Tech: Laravel, RESTful APIs, Flutter Client Integration, Firebase Cloud Messaging, Google Maps.</div>
+                <div class="project-tech">Tech Stack: Laravel, RESTful APIs, Flutter Client Integration, Firebase Cloud Messaging, Geolocation.</div>
             </div>
 
             <!-- Project 3 -->
             <div class="project-block">
                 <div class="project-header">
-                    <span class="project-name">3. VAYAN Platform (فيان) – B2B Multi-Tenant Marketplace & FinTech Escrow</span>
+                    <span class="project-name">3. VAYAN Platform (فيان) – B2B Multi-Tenant Marketplace & Escrow Engine</span>
                 </div>
                 <ul class="bullet-list">
-                    <li>Architected an enterprise marketplace with B2B Corporate Fleet management, enabling contractors to dispatch and track multiple workers.</li>
-                    <li>Engineered a multi-tier escrow engine (10 SAR platform fee + 15% commission deduction), 24-hour batch settlement cycles, and 3-day warranty tracking. Localized across <strong>7 languages</strong> with real-time translated chat.</li>
+                    <li>Architected an enterprise marketplace with B2B corporate fleet management, enabling multi-user corporate accounts to dispatch and monitor field workers.</li>
+                    <li>Implemented a multi-tier escrow engine (10 SAR platform fee + 15% provider commission deduction) with 24-hour batch settlement cycles and a 3-day warranty tracking module. Localized database schemas across 7 languages.</li>
                 </ul>
-                <div class="project-tech">Tech: Laravel, Redis Queues, Multi-Language DB Architecture, Escrow Ledgers.</div>
+                <div class="project-tech">Tech Stack: Laravel, Redis Queues, Escrow Ledger, Multi-Language DB Architecture.</div>
             </div>
 
             <!-- Project 4 -->
             <div class="project-block">
                 <div class="project-header">
-                    <span class="project-name">4. Drivo / Al-Joudy (الجودي) – Fleet Dispatch & Transportation ERP</span>
+                    <span class="project-name">4. Drivo / Al-Joudy (الجودي) – Fleet Dispatch & Transportation ERP Backend</span>
                     <span class="project-links">
                         <a href="https://apps.apple.com/us/app/%D8%A7%D9%84%D8%AC%D9%88%D8%AF%D9%8A/id6749195744" target="_blank">App Store</a>
                         <a href="https://play.google.com/store/apps/details?id=com.elmrouj.drivo" target="_blank">Google Play</a>
                     </span>
                 </div>
                 <ul class="bullet-list">
-                    <li>Engineered an end-to-end transportation platform linking a Flutter Driver App, React.js Operations Dispatch Portal, and a Laravel backend.</li>
-                    <li>Designed multi-stage installment payment schedules, automated trip cancellation refund wallets, and sales commission accounting.</li>
+                    <li>Engineered the backend for a comprehensive transportation platform linking a Flutter Driver App and a React.js Operations Dispatch Portal.</li>
+                    <li>Designed multi-stage installment payment schedules, automated trip cancellation refund wallets, and integrated sales commission accounting.</li>
                 </ul>
-                <div class="project-tech">Tech: Laravel, React.js, Flutter Client, Dynamic Installment Engine, Refund Wallets.</div>
+                <div class="project-tech">Tech Stack: Laravel, RESTful APIs, Dynamic Installment Engine, Refund Wallets, RBAC.</div>
             </div>
 
             <!-- Project 5 -->
             <div class="project-block">
                 <div class="project-header">
-                    <span class="project-name">5. Soumax (سو ماكس) – Real-Time Live Auctions & Bidding Platform</span>
+                    <span class="project-name">5. Soumax (سو ماكس) – High-Concurrency Real-Time Auction Engine</span>
                     <span class="project-links">
                         <a href="https://play.google.com/store/apps/details?id=com.elmroug.soumax.soumax_app" target="_blank">Google Play</a>
                     </span>
                 </div>
                 <ul class="bullet-list">
-                    <li>Engineered a high-concurrency auction engine with atomic bidding transactions, eliminating race conditions during final countdown seconds.</li>
-                    <li>Integrated security deposit holds (escrow) with automated release for outbid participants and instant checkout for winners.</li>
+                    <li>Developed an auction engine utilizing atomic database transactions and locking mechanisms to eliminate race conditions during final countdown bidding spikes.</li>
+                    <li>Built digital security deposit holds (escrow) with automated release for outbid participants and instant checkout workflows for winning bidders.</li>
                 </ul>
-                <div class="project-tech">Tech: Laravel, MySQL Transaction Locks, Queue Workers, Digital Wallet Engine.</div>
+                <div class="project-tech">Tech Stack: Laravel, MySQL Concurrency Locks, Background Queue Workers, Digital Wallet Engine.</div>
             </div>
 
             <!-- Project 6 -->
             <div class="project-block">
                 <div class="project-header">
-                    <span class="project-name">6. LegalTech Multi-Tenant SaaS Platform (نظام إدارة مكاتب المحاماة)</span>
+                    <span class="project-name">6. LegalTech Multi-Tenant SaaS Backend (نظام إدارة مكاتب المحاماة)</span>
                 </div>
                 <ul class="bullet-list">
-                    <li>Developed a 3-tier multi-tenant SaaS platform with dedicated portals for Law Firm Management, Legal Counsel, and End Clients.</li>
-                    <li>Engineered automated court hearing agendas, statutory filing deadline alerts, encrypted document vaults, and retainer billing.</li>
+                    <li>Built a 3-tier SaaS solution with dedicated APIs for Law Firm Management, Legal Counsel, and End Clients with strict tenant data isolation.</li>
+                    <li>Engineered judicial calendar schedulers for court sessions, automated statutory deadline reminders, secure document vaults, and retainer billing.</li>
                 </ul>
-                <div class="project-tech">Tech: Laravel, Multi-Tenant Architecture, Scheduled Jobs, Document Vault (DMS).</div>
+                <div class="project-tech">Tech Stack: Laravel, Multi-Tenancy Architecture, Schedulers, Document Vault (DMS), JWT.</div>
             </div>
 
             <!-- Project 7 -->
             <div class="project-block">
                 <div class="project-header">
-                    <span class="project-name">7. Byte Home (بايت هوم) – PropTech SaaS & Facility Automation</span>
+                    <span class="project-name">7. Byte Home (بايت هوم) – PropTech SaaS & Automated Messaging Engine</span>
                 </div>
                 <ul class="bullet-list">
-                    <li>Built a property management SaaS platform with metered pay-per-unit subscription billing (Units × Monthly Fee).</li>
-                    <li>Engineered automated incident dispatching: maintenance and cleaning tickets trigger instant WhatsApp notifications to assigned workers.</li>
+                    <li>Built a property management platform featuring metered, pay-per-unit subscription billing (Units × Monthly Fee).</li>
+                    <li>Developed automated incident dispatching: maintenance and cleaning tickets trigger instant WhatsApp notifications to designated workers via webhooks.</li>
                 </ul>
-                <div class="project-tech">Tech: Laravel, WhatsApp Business API Webhooks, Reactive Badge Notifications.</div>
+                <div class="project-tech">Tech Stack: Laravel, WhatsApp Business API Webhooks, Metered Billing Schedulers, Reactive Events.</div>
             </div>
 
-            <!-- Project 8 -->
+            <!-- Project 8, 9 -->
             <div class="project-block">
                 <div class="project-header">
-                    <span class="project-name">8. Mashhor Eye Experts Clinic CRM (مراكز د. مشهور لخبراء العيون)</span>
+                    <span class="project-name">8. Clinical & E-Commerce APIs</span>
                 </div>
                 <ul class="bullet-list">
-                    <li>Built a specialized HealthTech CRM for a leading Saudi ophthalmology surgical center, managing 1,800+ patient inquiries.</li>
-                    <li>Designed surgical conversion funnels (LASIK, Cataract, Glaucoma) and time-horizon follow-up queues (Today / Tomorrow / Day After).</li>
+                    <li><strong>Mashhor Eye Experts Clinic CRM:</strong> Specialized clinical consultation CRM backend in Laravel managing a pipeline of 1,800+ patient inquiries and surgical conversion funnels.</li>
+                    <li><strong>Mahsood (محصود) [App Store & Google Play]:</strong> High-turnover grocery delivery backend with dynamic inventory reservation, stock thresholds, and rapid checkout.</li>
                 </ul>
-                <div class="project-tech">Tech: Laravel, MySQL, Custom Clinical Pipeline, Lead Analytics.</div>
-            </div>
-
-            <!-- Project 9, 10, 11 -->
-            <div class="project-block">
-                <div class="project-header">
-                    <span class="project-name">9. Additional Production Platforms</span>
-                </div>
-                <ul class="bullet-list">
-                    <li><strong>Mahsood (محصود) [App Store & Google Play]:</strong> E-Grocery and Q-Commerce platform with dynamic inventory reservations and rapid checkout.</li>
-                    <li><strong>Al-Louloah Rose (اللؤلؤة روز):</strong> Luxury floral e-commerce featuring an interactive "Build Your Own Bouquet" dynamic customizer and surprise gifting logistics.</li>
-                    <li><strong>Elmrouj Sales CRM:</strong> B2B sales pipeline CRM with dynamic temporal follow-up filters and automated quote-to-invoice conversions.</li>
-                </ul>
-                <div class="project-tech">Tech: Laravel, MySQL, E-Commerce Engines, Dynamic Bundling, Query Scopes.</div>
+                <div class="project-tech">Tech Stack: Laravel, RESTful APIs, Custom Clinical Funnel, Inventory State Machines, Payment Gateways.</div>
             </div>
         </section>
 
@@ -534,12 +525,12 @@
             <div class="item-subtitle">Beni Suef, Egypt | Cumulative Grade: <strong>Very Good (جيد جداً)</strong></div>
             <ul class="bullet-list">
                 <li><strong>Graduation Project:</strong> "Convert Text To Sign Language" — <strong>Grade: Excellent (امتياز)</strong></li>
-                <li>Designed and implemented an AI/Computer Vision system translating written/spoken text into accurate 3D sign language gestures.</li>
+                <li>Designed and implemented an AI/Computer Vision system converting text input into 3D sign language gestures.</li>
             </ul>
 
             <div style="margin-top: 10px;" class="item-header">
                 <div>
-                    <span class="item-title">Full-Stack Web Development Diploma (PHP & Laravel)</span> — 
+                    <span class="item-title">Post-Graduate Diploma in Full-Stack Web Development (PHP & Laravel)</span> — 
                     <span class="item-company">Information Technology Institute (ITI)</span>
                 </div>
                 <span class="item-date">11/2023 – 03/2024</span>
@@ -551,14 +542,14 @@
             <h2 class="section-title">Certificates</h2>
             <ul class="bullet-list">
                 <li><strong>.NET Web Development Track</strong> – Information Technology Institute (ITI)</li>
-                <li><strong>Introduction to JavaScript</strong> – SoloLearn</li>
+                <li><strong>Introduction to JavaScript & Algorithms</strong> – SoloLearn</li>
             </ul>
         </section>
 
         <!-- LANGUAGES -->
         <section>
             <h2 class="section-title">Languages</h2>
-            <p><strong>Arabic:</strong> Native | <strong>English:</strong> Professional Working Proficiency</p>
+            <p><strong>Arabic:</strong> Native Language | <strong>English:</strong> Professional Working Proficiency</p>
         </section>
     </div>
 
